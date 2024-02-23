@@ -22,7 +22,7 @@ def maxProfit(self, prices: List[int]) -> int:
 # Contains Duplicate
 
 def containsDuplicate(self, nums: List[int]) -> bool:
-    return lens(nums) > len(set(nums))
+    return len(nums) > len(set(nums))
 
 # Product of Array Except Self
 
@@ -62,7 +62,7 @@ def maxProduct(self, nums: List[int]) -> int:
 
 # Find Minimum in Rotated Sorted Array
 
-def findMin(self, nums: List[int]) => int:
+def findMin(self, nums: List[int]) -> int:
     if len(nums) == 1:
         return nums[0]
     if nums[0] < nums[-1]:
