@@ -44,10 +44,10 @@ def mergeKLists(lists: List[ListNode]) -> ListNode:
             nodes.append(l.val)
             l = l.next
     nodes.sort()
-    head = curr = ListNode(None)
+    head = current = ListNode(None)
     for node in nodes:
-        curr.next = ListNode(node)
-        curr = curr.next
+        current.next = ListNode(node)
+        current = current.next
     return head.next
 
 # Detect Cycle in a Linked List II
