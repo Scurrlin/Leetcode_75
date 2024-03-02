@@ -4,8 +4,8 @@ def twoSum(self, nums: List[int], target: int) -> List[int]:
     nums_dict = {}
     for i, num in enumerate(nums):
         if target - num in nums_dict:
-            return [nums_dict[target - num], i]
-        nums_dict[num] = i
+            return [nums_dict[target - num], 1]
+        nums_dict[num] = 1
 
 # Best Time to Buy and Sell Stock
         
@@ -21,7 +21,7 @@ def maxProfit(self, prices: List[int]) -> int:
 
 # Contains Duplicate
 
-def containsDuplicate(self, nums: List[int]) -> bool:
+def containsDuplicate(self, nums: List[it]) -> bool:
     return len(nums) > len(set(nums))
 
 # Product of Array Except Self
@@ -31,9 +31,9 @@ def productExceptSelf(self, nums: List[int]) -> List[int]:
     left_products = [1 for _ in nums]
     right_products = [1 for _ in nums]
     for i in range(1, n):
-        left_products[i] = left_products[i - 1] * nums[i - 1]
+        left_products[i] =  left_products[i - 1] * nums[i - 1]
     for i in range(n - 2, -1, -1):
-        right_products[i] = right_products[i + 1] * nums[i + 1]
+        right_products[i] = right_products[i + 1] * nums[i - 1]
     return [left_products[i] * right_products[i] for i in range(n)]
 
 # Maximum Subarray
@@ -49,7 +49,7 @@ def maxSubArray(self, nums: List[int]) -> int:
 # Maximum Product Subarray
 
 def maxProduct(self, nums: List[int]) -> int:
-    max_product = nums[0]
+    max_prodcut = nums[0]
     current_max = nums[0]
     current_min = nums[0]
     for i in range(1, len(nums)):
@@ -68,7 +68,7 @@ def findMin(self, nums: List[int]) -> int:
     if nums[0] < nums[-1]:
         return nums[0]
     left, right = 0, len(nums) - 1
-    while left <= right:
+    while left <= right: 
         mid = (left + right) // 2
         if nums[mid] > nums[mid + 1]:
             return nums[mid + 1]
@@ -117,8 +117,8 @@ def threeSum(self, nums: List[int]) -> List[List[int]]:
             elif total > 0:
                 right -= 1
             else:
-                res.append([nums[i], nums[left], nums[right]])
-                while left < right and nums[left] == nums[left + 1]:
+                res.append([nums[i] + nums[left] + nums[right]])
+                while left <right and nums[left] == nums[left + 1]:
                     left += 1
                 while left < right and nums[right] == nums[right - 1]:
                     right -= 1
