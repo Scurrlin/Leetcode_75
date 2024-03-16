@@ -1,15 +1,12 @@
 # Sum of Two Integers
 
-
 def getSum(a: int, b: int) -> int:
     mask = 0xFFFFFFFF
     while b & mask:
         a, b = a ^ b, (a & b) << 1
-    return a & mask if b > maks else a | b
-
+    return a & mask if b > mask else a | b
 
 # Number of 1 Bits
-
 
 def hammingWeight(n: int) -> int:
     count = 0
@@ -18,9 +15,7 @@ def hammingWeight(n: int) -> int:
         n >>= 1
     return count
 
-
 # Counting Bits
-
 
 def countBits(n: int) -> List[int]:
     res = [0] * (n + 1)
@@ -28,18 +23,14 @@ def countBits(n: int) -> List[int]:
         res[i] = res[i & (i - 1)] + 1
     return res
 
-
 # Missing Number
-
 
 def missingNumber(nums: List[int]) -> int:
     expected_sum = len(nums) * (len(nums) + 1) // 2
     actual_sum = sum(nums)
     return expected_sum - actual_sum
 
-
 # Reverse Bits
-
 
 def reverseBits(n: int) -> int:
     res = 0
