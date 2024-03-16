@@ -1,6 +1,9 @@
 # Basics
 
-# Variables are placeholders for storing data in a computer program. They have a name and a value associated with them. In Python, you don't need to explicitly declare variable types; they are dynamically typed. You can assign values to variables using the assignment operator `=`.
+# Variables are placeholders for storing data in a computer program. They have a
+# name and a value associated with them. In Python, you don't need to explicitly
+# declare variable types; they are dynamically typed. You can assign values to
+# variables using the assignment operator `=`.
 
 x = 5
 name = "John"
