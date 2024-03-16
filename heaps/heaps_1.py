@@ -24,7 +24,9 @@ def mergeKLists(lists: List[ListNode]) -> ListNode:
 # Top K Frequent Elements
 
 def topKFrequent(nums: List[int], k: int) -> List[int]:
-    # Create a frequency dictionary
+
+# Create a frequency dictionary
+
     freq_dict = {}
     for num in nums:
         if num in freq_dict:
@@ -32,7 +34,8 @@ def topKFrequent(nums: List[int], k: int) -> List[int]:
         else:
             freq_dict[num] = 1
 
-    # Use a heap to find the k most frequent elements
+# Use a heap to find the k most frequent elements
+
     return heapq.nlargest(k, freq_dict.keys(), key=freq_dict.get)
 
 # Find Median from Data Stream
@@ -50,6 +53,7 @@ class MedianFinder:
             heapq.heappush(self.large, val)
 
         # Balance the heaps
+            
         if len(self.small) > len(self.large) + 1:
             val = -heapq.heappop(self.small)
             heapq.heappush(self.large, val)
