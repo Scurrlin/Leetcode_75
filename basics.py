@@ -38,6 +38,7 @@ while i < 5:
 # `else` statements to control the flow of your code.
 
 x = 10
+
 if x > 0:
     print("Positive")
 elif x < 0:
@@ -49,10 +50,8 @@ else:
 # in organizing code into manageable chunks and promote code reuse. In Python,
 # you can define functions using the `def` keyword.
 
-
 def greet(name):
     print("Hello, " + name + "!")
-
 
 greet("Alice")
 
@@ -60,7 +59,6 @@ greet("Alice")
 # types with their own attributes (variables) and methods (functions).
 # Object-oriented programming (OOP) is a key paradigm in Python, and classes are
 # central to it.
-
 
 class Person:
     def __init__(self, name, age):
@@ -75,7 +73,6 @@ class Person:
             + str(self.age)
             + " years old."
         )
-
 
 person1 = Person("Alice", 25)
 person1.greet()

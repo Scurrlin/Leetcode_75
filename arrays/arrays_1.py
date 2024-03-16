@@ -1,6 +1,5 @@
 # Two Sum
 
-
 def twoSum(self, nums: List[int], target: int) -> List[int]:
     nums_dict = {}
     for i, num in enumerate(nums):
@@ -8,9 +7,7 @@ def twoSum(self, nums: List[int], target: int) -> List[int]:
             return [nums_dict[target - num], i]
         nums_dict[num] = i
 
-
 # Best Time to Buy and Sell Stock
-
 
 def maxProfit(self, prices: List[int]) -> int:
     max_profit = 0
@@ -22,16 +19,12 @@ def maxProfit(self, prices: List[int]) -> int:
             max_profit = price - min_price
     return max_profit
 
-
 # Contains Duplicate
-
 
 def containsDuplicate(self, nums: List[int]) -> bool:
     return len(nums) > len(set(nums))
 
-
 # Product of Array Except Self
-
 
 def productExceptSelf(self, nums: List[int]) -> List[int]:
     n = len(nums)
@@ -43,9 +36,7 @@ def productExceptSelf(self, nums: List[int]) -> List[int]:
         right_products[i] = right_products[i + 1] * nums[i + 1]
     return [left_products[i] * right_products[i] for i in range(n)]
 
-
 # Maximum Subarray
-
 
 def maxSubArray(self, nums: List[int]) -> int:
     max_sum = nums[0]
@@ -55,9 +46,7 @@ def maxSubArray(self, nums: List[int]) -> int:
         max_sum = max(max_sum, current_sum)
     return max_sum
 
-
 # Maximum Product Subarray
-
 
 def maxProduct(self, nums: List[int]) -> int:
     max_product = nums[0]
@@ -71,9 +60,7 @@ def maxProduct(self, nums: List[int]) -> int:
         max_product = max(max_product, current_max)
     return max_product
 
-
 # Find Minimum in Rotated Sorted Array
-
 
 def findMin(self, nums: List[int]) -> int:
     if len(nums) == 1:
@@ -92,9 +79,7 @@ def findMin(self, nums: List[int]) -> int:
         else:
             right = mid - 1
 
-
 # Search in Rotated Sorted Array
-
 
 def search(self, nums: List[int], target: int) -> int:
     if not nums:
@@ -116,9 +101,7 @@ def search(self, nums: List[int], target: int) -> int:
                 end = mid - 1
     return -1
 
-
 # 3 Sum
-
 
 def threeSum(self, nums: List[int]) -> List[List[int]]:
     nums.sort()
@@ -143,9 +126,7 @@ def threeSum(self, nums: List[int]) -> List[List[int]]:
                 right -= 1
     return res
 
-
 # Container With Most Water
-
 
 def maxArea(self, height: List[int]) -> int:
     left, right = 0, len(height) - 1
