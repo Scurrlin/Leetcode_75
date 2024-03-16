@@ -2,11 +2,13 @@
 
 import heapq
 
-# This line imports the `heapq` module, which provides an implementation of the heap queue algorithm, also known as the priority queue algorithm.
+# This line imports the `heapq` module, which provides an implementation of the
+# heap queue algorithm, also known as the priority queue algorithm.
 
 from typing import List
 
-# This line imports the `List` class from the `typing` module, which is used for type hinting.
+# This line imports the `List` class from the `typing` module, which is used for
+# type hinting.
 
 class ListNode:
 
@@ -14,16 +16,20 @@ class ListNode:
 
     def __init__(self, val=0, next=None):
 
-# This line defines the constructor for the `ListNode` class. It takes two parameters: `val` and `next`. `val` is the value of the node, and `next` is a reference to the next node in the list.
+# This line defines the constructor for the `ListNode` class. It takes two
+# parameters: `val` and `next`. `val` is the value of the node, and `next` is a
+# reference to the next node in the list.
 
         self.val = val
         self.next = next
 
-# These lines assign the values of `val` and `next` to the instance variables `self.val` and `self.next`, respectively.
+# These lines assign the values of `val` and `next` to the instance variables
+# `self.val` and `self.next`, respectively.
 
 def mergeKLists(lists: List[ListNode]) -> ListNode:
 
-# This line defines a function named `mergeKLists` that takes a list of `ListNode` objects and returns a `ListNode`.
+# This line defines a function named `mergeKLists` that takes a list of
+# `ListNode` objects and returns a `ListNode`.
 
     min_heap = []
 
@@ -39,7 +45,8 @@ def mergeKLists(lists: List[ListNode]) -> ListNode:
 
             heapq.heappush(min_heap, l.val)
 
-# This line pushes the value of `l` onto `min_heap`. The `heapq.heappush()` function maintains the heap invariant.
+# This line pushes the value of `l` onto `min_heap`. The `heapq.heappush()`
+# function maintains the heap invariant.
 
             l = l.next
 
@@ -47,7 +54,8 @@ def mergeKLists(lists: List[ListNode]) -> ListNode:
 
     dummy = ListNode(0)
 
-# This line creates a new `ListNode` with a value of 0 and assigns it to `dummy`.
+# This line creates a new `ListNode` with a value of 0 and assigns it to
+# `dummy`.
 
     current = dummy
 
@@ -55,11 +63,13 @@ def mergeKLists(lists: List[ListNode]) -> ListNode:
 
     while min_heap:
 
-# This line starts a while loop that continues as long as `min_heap` is not empty.
+# This line starts a while loop that continues as long as `min_heap` is not
+# empty.
 
         current.next = ListNode(heapq.heappop(min_heap))
 
-# This line pops the smallest value from `min_heap`, creates a new `ListNode` with that value, and assigns it to `current.next`.
+# This line pops the smallest value from `min_heap`, creates a new `ListNode`
+# with that value, and assigns it to `current.next`.
 
         current = current.next
 
@@ -67,4 +77,5 @@ def mergeKLists(lists: List[ListNode]) -> ListNode:
 
     return dummy.next
 
-# This line returns the merged list, which starts from the next node of `dummy`. The `dummy` node was used as a placeholder to easily start the merged list.
+# This line returns the merged list, which starts from the next node of `dummy`.
+# The `dummy` node was used as a placeholder to easily start the merged list.

@@ -25,16 +25,12 @@ def mergeKLists(lists: List[ListNode]) -> ListNode:
 
 def topKFrequent(nums: List[int], k: int) -> List[int]:
 
-# Create a frequency dictionary
-
     freq_dict = {}
     for num in nums:
         if num in freq_dict:
             freq_dict[num] += 1
         else:
             freq_dict[num] = 1
-
-# Use a heap to find the k most frequent elements
 
     return heapq.nlargest(k, freq_dict.keys(), key=freq_dict.get)
 
@@ -51,8 +47,6 @@ class MedianFinder:
             (-self.small[0]) > self.large[0]):
             val = -heapq.heappop(self.small)
             heapq.heappush(self.large, val)
-
-        # Balance the heaps
             
         if len(self.small) > len(self.large) + 1:
             val = -heapq.heappop(self.small)
