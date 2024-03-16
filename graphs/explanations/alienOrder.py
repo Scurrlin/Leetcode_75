@@ -2,12 +2,15 @@
 
 def alienOrder(words: List[str]) -> str:
 
-# This is the function definition for `alienOrder`. It takes a list of strings `words` as an input and returns a string.
+# This is the function definition for `alienOrder`. It takes a list of strings
+# `words` as an input and returns a string.
 
     graph = {}
     indegree = {}
 
-# These lines initialize two dictionaries `graph` and `indegree`. `graph` will store the adjacency list representation of the graph and `indegree` will store the indegree of each node.
+# These lines initialize two dictionaries `graph` and `indegree`. `graph` will
+# store the adjacency list representation of the graph and `indegree` will store
+# the indegree of each node.
 
     for word in words:
         for char in word:
@@ -30,12 +33,18 @@ def alienOrder(words: List[str]) -> str:
             if len(word1) > len(word2):
                 return ""
 
-# These loops build the graph and update the indegree. If a character in `word1` is not the same as the corresponding character in `word2`, add an edge from the character in `word1` to the character in `word2` and increment the indegree of the character in `word2`. If `word1` is longer than `word2` and all the characters in `word2` are the same as the corresponding characters in `word1`, return an empty string because the input is invalid.
+# These loops build the graph and update the indegree. If a character in `word1`
+# is not the same as the corresponding character in `word2`, add an edge from
+# the character in `word1` to the character in `word2` and increment the
+# indegree of the character in `word2`. If `word1` is longer than `word2` and
+# all the characters in `word2` are the same as the corresponding characters in
+# `word1`, return an empty string because the input is invalid.
 
     queue = [char for char in indegree if indegree[char] == 0]
     order = []
 
-# Initialize a queue with the characters that have an indegree of 0 and an empty list `order` to store the order of characters.
+# Initialize a queue with the characters that have an indegree of 0 and an empty
+# list `order` to store the order of characters.
 
     while queue:
         char = queue.pop(0)
@@ -45,13 +54,17 @@ def alienOrder(words: List[str]) -> str:
             if indegree[neighbor] == 0:
                 queue.append(neighbor)
 
-# While the queue is not empty, remove a character from the queue, add it to `order`, and decrease the indegree of its neighbors. If a neighbor's indegree becomes 0, add it to the queue. This is a topological sort.
+# While the queue is not empty, remove a character from the queue, add it to
+# `order`, and decrease the indegree of its neighbors. If a neighbor's indegree
+# becomes 0, add it to the queue. This is a topological sort.
 
     if len(order) != len(indegree):
         return ""
 
-# If the length of `order` is not the same as the length of `indegree`, return an empty string because the graph has a cycle.
+# If the length of `order` is not the same as the length of `indegree`, return
+# an empty string because the graph has a cycle.
 
     return "".join(order)
 
-# Return the order of characters as a string. This is the lexicographically smallest alien dictionary order that is possible given the words in the input.
+# Return the order of characters as a string. This is the lexicographically
+# smallest alien dictionary order that is possible given the words in the input.
