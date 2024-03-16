@@ -7,10 +7,10 @@ name = "John"
 
 # Data types define the type of data that a variable can hold. Common data types include integers, floating-point numbers, strings, booleans, lists, tuples, dictionaries, sets, and more.
 
-age = 25             # Integer
-height = 6.2         # Float
-name = "Alice"       # String
-is_student = True    # Boolean
+age = 25  # Integer
+height = 6.2  # Float
+name = "Alice"  # String
+is_student = True  # Boolean
 
 # Loops are used to execute a block of code repeatedly until a certain condition is met. Python supports two main types of loops: `for` loops and `while` loops.
 
@@ -38,20 +38,30 @@ else:
 
 # Functions are blocks of reusable code that perform a specific task. They help in organizing code into manageable chunks and promote code reuse. In Python, you can define functions using the `def` keyword.
 
+
 def greet(name):
     print("Hello, " + name + "!")
-   
+
+
 greet("Alice")
 
 # Classes are blueprints for creating objects. They allow you to define new data types with their own attributes (variables) and methods (functions). Object-oriented programming (OOP) is a key paradigm in Python, and classes are central to it.
+
 
 class Person:
     def __init__(self, name, age):
         self.name = name
         self.age = age
-   
+
     def greet(self):
-        print("Hello, my name is " + self.name + " and I'm " + str(self.age) + " years old.")
-   
+        print(
+            "Hello, my name is "
+            + self.name
+            + " and I'm "
+            + str(self.age)
+            + " years old."
+        )
+
+
 person1 = Person("Alice", 25)
 person1.greet()
