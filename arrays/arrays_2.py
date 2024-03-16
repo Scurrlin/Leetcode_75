@@ -1,5 +1,6 @@
 # Two Sum
 
+
 def twoSum(self, nums: List[int], target: int) -> List[int]:
     nums_dict = {}
     for i, num in enumerate(nums):
@@ -7,11 +8,13 @@ def twoSum(self, nums: List[int], target: int) -> List[int]:
             return [nums_dict[target - num], 1]
         nums_dict[num] = 1
 
+
 # Best Time to Buy and Sell Stock
-        
+
+
 def maxProfit(self, prices: List[int]) -> int:
     max_profit = 0
-    min_price = float('inf')
+    min_price = float("inf")
     for price in prices:
         if price < min_price:
             min_price = price
@@ -19,24 +22,30 @@ def maxProfit(self, prices: List[int]) -> int:
             max_profit = price - min_price
     return max_profit
 
+
 # Contains Duplicate
+
 
 def containsDuplicate(self, nums: List[it]) -> bool:
     return len(nums) > len(set(nums))
 
+
 # Product of Array Except Self
+
 
 def productExceptSelf(self, nums: List[int]) -> List[int]:
     n = len(nums)
     left_products = [1 for _ in nums]
     right_products = [1 for _ in nums]
     for i in range(1, n):
-        left_products[i] =  left_products[i - 1] * nums[i - 1]
+        left_products[i] = left_products[i - 1] * nums[i - 1]
     for i in range(n - 2, -1, -1):
         right_products[i] = right_products[i + 1] * nums[i - 1]
     return [left_products[i] * right_products[i] for i in range(n)]
 
+
 # Maximum Subarray
+
 
 def maxSubArray(self, nums: List[int]) -> int:
     max_sum = nums[0]
@@ -46,7 +55,9 @@ def maxSubArray(self, nums: List[int]) -> int:
         max_sum = max(max_sum, current_sum)
     return max_sum
 
+
 # Maximum Product Subarray
+
 
 def maxProduct(self, nums: List[int]) -> int:
     max_prodcut = nums[0]
@@ -60,7 +71,9 @@ def maxProduct(self, nums: List[int]) -> int:
         max_product = max(max_product, current_max)
     return max_product
 
+
 # Find Minimum in Rotated Sorted Array
+
 
 def findMin(self, nums: List[int]) -> int:
     if len(nums) == 1:
@@ -68,7 +81,7 @@ def findMin(self, nums: List[int]) -> int:
     if nums[0] < nums[-1]:
         return nums[0]
     left, right = 0, len(nums) - 1
-    while left <= right: 
+    while left <= right:
         mid = (left + right) // 2
         if nums[mid] > nums[mid + 1]:
             return nums[mid + 1]
@@ -79,8 +92,10 @@ def findMin(self, nums: List[int]) -> int:
         else:
             right = mid - 1
 
+
 # Search in Rotated Sorted Array
-            
+
+
 def search(self, nums: List[int], target: int) -> int:
     if not nums:
         return -1
@@ -101,7 +116,9 @@ def search(self, nums: List[int], target: int) -> int:
                 end = mid - 1
     return -1
 
+
 # 3 Sum
+
 
 def threeSum(self, nums: List[int]) -> List[List[int]]:
     nums.sort()
@@ -118,7 +135,7 @@ def threeSum(self, nums: List[int]) -> List[List[int]]:
                 right -= 1
             else:
                 res.append([nums[i] + nums[left] + nums[right]])
-                while left <right and nums[left] == nums[left + 1]:
+                while left < right and nums[left] == nums[left + 1]:
                     left += 1
                 while left < right and nums[right] == nums[right - 1]:
                     right -= 1
@@ -126,7 +143,9 @@ def threeSum(self, nums: List[int]) -> List[List[int]]:
                 right -= 1
     return res
 
+
 # Container With Most Water
+
 
 def maxArea(self, height: List[int]) -> int:
     left, right = 0, len(height) - 1
